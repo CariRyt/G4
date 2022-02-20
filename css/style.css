@@ -1,0 +1,138 @@
+body {
+    font-family: "Lato", sans-serif;
+    background-color: #cbe6df;
+  }
+
+  .navbar {
+    background-color: #003b31;
+    font: 16px;
+    text-align: center;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+}
+  
+  .sidenav {
+    width: 130px;
+    position: fixed;
+    z-index: 1;
+    top: 5%;
+    left: 0%;
+    background: #8cb1a7;
+    overflow-x: hidden;
+    padding: 0;
+  }
+  
+  .sidenav a {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #2196F3;
+    display: block;
+  }
+  
+  .sidenav a:hover {
+    color: #2db63f;
+  }
+  
+  .main {
+    margin-left: 140px; 
+    font-size: 28px; 
+    padding: 0px 10px;
+  }
+  
+  @media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+  }
+  @media screen and (max-width:767px){
+    .hideside{
+      display:none;
+    }
+  }
+
+    .ilmaa1 {
+      margin-top:5%;
+    }
+
+    
+    .kuva{
+      width: 100%;
+    }
+    .näkyy{
+      border: solid red;
+    }
+
+    .rounded{
+      border-radius: 15%;
+    }
+
+    .Sinnabox {
+      display: flex;
+      margin-top: 60px;
+      justify-content: center;
+      flex-flow: row wrap;
+    }
+
+    .Sinnabox > header  {
+      width: 100%;
+      text-align: center;
+    }
+    
+    .Sinnabox > .ImageContainer {
+      width: 100%;
+      text-align: center;
+    }
+
+    .Sinnakuva {
+      
+      width: 70%;
+      height: 300px;
+
+    }
+
+
+    .Sinnateksti {
+      
+      
+      height: 250px;
+      border: solid black 1px;
+      width: 35%;
+      margin: 10px;
+      
+      
+    }
+
+    .Sinnateksti > img {
+
+      width: 100%;
+    }
+
+   .keskitys{
+     text-align: center;
+     font-size: large;
+
+   }
+   .isotxt{
+     font-size: large;
+   }
+
+   .keskikokotxt{
+     font-size: medium;
+   }
+
+   .sizeforce{
+     max-width: 100%;
+     height: 250px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+   }
+   .sizeforce2{
+    max-width: 100%;
+    height: auto;
+   }
+
+   .imagesize{
+    width: 100%;
+    height: 240px;
+   }
+   
