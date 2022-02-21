@@ -1,16 +1,18 @@
 <?php
     include 'config.php';
    
-    if (isset($_POST['commentSubmit'])) {
-        $userid = $_POST['userid'];
+    if (isset($_POST['cSub'])) {
+        $uid = $_POST['userid'];
+        $message = $_POST['message'];
     
         $sql = "INSERT INTO comments (userid, message)";
             
-        if ($conn->query($sql) === TRUE) {
+        if ($link->query($sql) === TRUE) {
             echo "New record created successfully";
         } else {
-            echo "Error: " . $sql . "<br>" . $conn->error;
+            echo "Error: " . $sql . "<br>" . $link->error;
         }
+    }
         
 ?>
 <!DOCTYPE html>
@@ -25,7 +27,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <link href="css/style.css" rel="stylesheet" type="text/css"> 
+    <link href="../css/style.css" rel="stylesheet" type="text/css">  
 
 
 <style>
@@ -183,8 +185,10 @@ button {
                 echo "<form> 
                   <input type='hidden' name='uid' value='User'>
                   <textarea name='message'></textarea><br>
-                  <button type='submit' name='commentSubmit'>Comment</button>
+                  <button type='submit' name='cSub'>Comment</button>
                   </form>";
+                
+            
                 ?>
                
           
