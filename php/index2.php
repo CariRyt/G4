@@ -1,19 +1,23 @@
 <?php
     include 'config.php';
-   
-    if (isset($_POST['cSub'])) {
-        $uid = $_POST['userid'];
-        $message = $_POST['message'];
     
-        $sql = "INSERT INTO comments (userid, message)";
-            
-        if ($link->query($sql) === TRUE) {
-            echo "New record created successfully";
-        } else {
-            echo "Error: " . $sql . "<br>" . $link->error;
+    function createUser($link, $userid, $message) {
+        $sql = "INSERT INTO comments (userid, message) VALUES (?, ?);";
+        $stmt = mysqli_stmt_init($link);
+        if (!mysqli_stmt_prepare($stmt, $sql)) {
+            header("location: ../signup.php?error=stmtfailed2");
+            exit();
         }
+        
+        
+        mysqli_stmt_bind_param($stmt, "ss", $userid, $message);
+        mysqli_stmt_execute($stmt);
+        mysqli_stmt_close($stmt);
+        header("location: ../signup.php?error=none");
+        exit();
     }
-         
+   
+        
 ?>
 <!DOCTYPE html>
 <html lang="en">

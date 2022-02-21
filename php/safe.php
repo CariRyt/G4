@@ -8,3 +8,4 @@ function setComments() {
         $result = $conn->query($sql);
     }
 }
+?>
