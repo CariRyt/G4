@@ -1,7 +1,7 @@
 <?php
     include 'config.php';
     
-    function createUser($link, $userid, $message) {
+    function createmessage($link, $userid, $message) {
         $sql = "INSERT INTO comments (userid, message) VALUES (?, ?);";
         $stmt = mysqli_stmt_init($link);
         if (!mysqli_stmt_prepare($stmt, $sql)) {

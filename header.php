@@ -15,7 +15,43 @@
 <link href="css/style.css" rel="stylesheet" type="text/css">
 
 <style>
-
+.formP{
+display:block;
+margin-top:8%;
+position:relative;
+}
+.formPosition{
+position:relative;
+width:80%;
+margin-left:auto;
+margin-right:auto;
+text-align:center;
+padding:10px;
+}
+.formitems{
+width:25%;
+margin-left:auto;
+margin-right:auto;
+margin-top: 15px;
+display:flex;
+flex-direction:column;
+position:relative;
+text-align:center;
+}
+button{
+margin-top:25px;
+padding:5px;
+width:10%;
+background-color:  #003b31;
+color: white;
+}
+h2{
+text-align:center;
+}
+footer{
+position:absolute;
+bottom:0;
+}
 .container {
     position: relative;
     text-align: center;
@@ -40,11 +76,11 @@
     <img src="https://cdn.discordapp.com/attachments/934009802298888219/936933677223526410/tene2.png" width="60" height="60" alt="">
     </div>
     <ul class="nav navbar-nav">
-    <li class="active"><a href="#">Home</a></li>
+    <li><a href="index.php">Home</a></li>
     <li><a href="LS.html">Activities</a></li>
-    <li><a href="cr.html">Culture</a></li>
+    <li><a href="/group4new/html/cr.html">Culture</a></li>
     <li><a href="ST.html">Nature</a></li>
-    <li><a href="MW.html">How to get around</a></li>
+    <li><a href="/group4new/html/MW.html">How to get around</a></li>
     <?php 
         if (isset($_SESSION["useruid"])) {
             echo "<li><a href='profile.php'>Profile page</a></li>";
