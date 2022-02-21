@@ -11,7 +11,7 @@
         } else {
             echo "Error: " . $sql . "<br>" . $conn->error;
         }
-        
+    }  
 ?>
 <!DOCTYPE html>
 <html lang="en">
