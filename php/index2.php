@@ -13,7 +13,7 @@
             echo "Error: " . $sql . "<br>" . $link->error;
         }
     }
-        
+         
 ?>
 <!DOCTYPE html>
 <html lang="en">
