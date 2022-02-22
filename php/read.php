@@ -1,5 +1,6 @@
 <?php
-
+    
+    
     function createUser($link, $userid, $message) {
         $sql = "INSERT INTO comments (userid, message) VALUES (?, ?);";
         $stmt = mysqli_stmt_init($link);
@@ -102,7 +103,7 @@
     overflow:auto;
   }
   .TopMargins {
-    margin: 5%;
+    margin: 10%;
   }
 
   .maker {
@@ -132,18 +133,6 @@ button {
 
 }
 
-.butt {
-    width: 80px;
-    height: 30px;
-    background-color: green;
-    border: 2px;
-    color: white;
-    font-family: Cambria;
-    font-weight: 400;
-    cursor: pointer;
-    margin-bottom: 30px;
-    
-}
 .comment-box {
 	width: 815px;
 	padding: 20px;
@@ -175,28 +164,11 @@ button {
   </nav>
 
 <div class="container text-center">
-<article class="box">
-<div class="clearfix">
+
 <article class="TopMargins">
-                
-<section>
-                <p>To see your comments click the button:
-<button name="butt" onclick="location.href='read.php'">Clicketi</button>
-    <br>
-    </p>
-    </section>
+          
 
-</article>
 <?php 
-
-if (isset($_POST["message"])) {
-    $message=$_POST["message"];
-}
-else{
-    header("Location:index2.php");
-    exit;
-}
-
 $connection = mysqli_connect("db", "root", "password");
 
 if (!$connection) {
@@ -204,22 +176,23 @@ if (!$connection) {
 }
 
 $database=mysqli_select_db($connection, "comments");
-if (!$connection) {
+if (!$database) {
     die("Couldn't connect to database " . mysqli_connect_errno());
 }
-echo "Your post has been succesfull! We appreciate your feedback.";
 
-$sql="insert into comments(id, userid, message) values(?, ?, ?)";
-$stmt=mysqli_prepare($connection, $sql);
-mysqli_stmt_bind_param($stmt, 'iss', $id, $userid, $message);
-mysqli_stmt_execute($stmt);
 
-mysqli_stmt_close($stmt);
+$read=mysqli_query($connection,"select * from comments");
+
+while ($lane=mysqli_fetch_object($read)) {
+    print "$lane->message<br><br>";
+}
+
 mysqli_close($connection);
 
-exit;
+
 ?>
-</div></article>
-</div>
+</article>
+ </div>
+
                 </body>
 </html>
