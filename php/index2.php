@@ -1,7 +1,7 @@
 <?php
     
     
-    function createmessage($link, $userid, $message) {
+    function createUser($link, $userid, $message) {
         $sql = "INSERT INTO comments (userid, message) VALUES (?, ?);";
         $stmt = mysqli_stmt_init($link);
         if (!mysqli_stmt_prepare($stmt, $sql)) {
@@ -164,6 +164,17 @@ button {
     </div>
   </nav>
 
+        
+ 
+  
+      <div class="sidenav hideside">
+        <img src="https://cdn.discordapp.com/attachments/937685854099492904/937759206520537119/fish-4202421_1280.png" width="100" alt="">
+        <h5>Eat fish or fish eat you</h5>
+        <img src="https://cdn.discordapp.com/attachments/937685854099492904/937759206809935872/spanish-dancing-vector-767515.jpg" width="125" alt="">
+        <h5>Dance olé!</h5>
+        <img src="https://cdn.discordapp.com/attachments/937685854099492904/937685927545946142/beerani.gif" alt="">
+        <h5>Grab cold one and relax</h5>
+       </div>
       
   
       <div class="container text-center">
@@ -177,13 +188,18 @@ button {
                 </article>
                 <form action='safe.php' method='post'>
                 <?php
-                echo "<form>
+                echo "<form> 
+                  <input type='hidden' name='uid' value='User'>
                   <textarea name='message'></textarea><br>
                   <button type='submit' name='cSub'>Comment</button>
                   </form>";
-            // ^ Luodaan kommenttikenttä ja nappi jolla saadaan lähetettyä viesti eteenpäin
+                
+            
                 ?>
                 </form>
             </div>
   </body>
+  <footer class="maker">
+    <b><em>Team 4 website project. This page was made by Carita Rytkölä</em></b>
+  </footer>
 </html>

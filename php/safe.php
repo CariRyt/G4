@@ -1,5 +1,6 @@
 <?php
-
+    
+    
     function createUser($link, $userid, $message) {
         $sql = "INSERT INTO comments (userid, message) VALUES (?, ?);";
         $stmt = mysqli_stmt_init($link);
@@ -119,18 +120,6 @@
 	resize: none;
 }
 
-button {
-	width: 80px;
-	height: 30px;
-	background-color: #282828;
-	border: none;
-	color: #fff;
-	font-family: arial;
-	font-weight: 400;
-	cursor: pointer;
-	margin-bottom: 60px;
-
-}
 
 .butt {
     width: 80px;
@@ -186,7 +175,7 @@ button {
     </p>
     </section>
 
-</article>
+
 <?php 
 
 if (isset($_POST["message"])) {
@@ -195,6 +184,20 @@ if (isset($_POST["message"])) {
 else{
     header("Location:index2.php");
     exit;
+}
+
+if (isset($_POST["userid"])) {
+    $userid=$_POST["userid"];
+}
+else{
+    $userid="";
+}
+
+if (isset($_POST["id"])) {
+    $id=$_POST["id"];
+}
+else{
+    $id="";
 }
 
 $connection = mysqli_connect("db", "root", "password");
@@ -219,7 +222,6 @@ mysqli_close($connection);
 
 exit;
 ?>
-</div></article>
-</div>
+
                 </body>
 </html>
